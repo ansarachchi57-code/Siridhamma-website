@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDP Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header" style="flex-direction: column; align-items: flex-start;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="C:/Users/My Pc/.gemini/antigravity/brain/2cd1160f-5f5a-4dce-892c-d171a1fab4f6/sdp_logo_1773354990971.png" alt="SDP Logo" class="brand-logo" id="sidebar-logo">
+                    <h2 class="brand-title" contenteditable="true">SDP<br><span>Webpage</span></h2>
+                </div>
+                <div style="margin-top: 15px; width: 100%;">
+                    <label for="logo-upload" class="upload-btn" style="text-align: center; display: block;"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Logo</label>
+                    <input type="file" id="logo-upload" accept="image/*" style="display: none;">
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>ප්‍රධාන මෙනුව (Main)</h3>
+                    <a href="#" class="nav-item active" data-target="home"><i class="fa-solid fa-house"></i> මුල් පිටුව (Home)</a>
+                    <a href="#" class="nav-item" data-target="notices"><i class="fa-solid fa-bullhorn"></i> නිවේදන පුවරුව (Notices)</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>නාමලේඛන (Registries)</h3>
+                    <a href="#" class="nav-item" data-target="registry-teachers"><i class="fa-solid fa-chalkboard-user"></i> ගුරු නාමලේඛනය</a>
+                    <a href="#" class="nav-item" data-target="registry-students"><i class="fa-solid fa-user-graduate"></i> සිසු නාමලේඛනය</a>
+                    <a href="#" class="nav-item" data-target="registry-prefects"><i class="fa-solid fa-user-shield"></i> ශිෂ්‍ය නායක ලේඛනය</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>පැමිණීමේ ලේඛන (Attendance)</h3>
+                    <a href="#" class="nav-item" data-target="attendance-teachers"><i class="fa-solid fa-calendar-check"></i> ගුරු පැමිණීම</a>
+                    <a href="#" class="nav-item" data-target="attendance-students"><i class="fa-solid fa-calendar-plus"></i> සිසු පැමිණීම</a>
+                    <a href="#" class="nav-item" data-target="attendance-prefects"><i class="fa-solid fa-calendar-days"></i> ශිෂ්‍ය නායක පැමිණීම</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>කාර්ය සාධන (Performance)</h3>
+                    <a href="#" class="nav-item" data-target="flower-offerings"><i class="fa-solid fa-fan"></i> මල් පූජා ලකුණු</a>
+                    <a href="#" class="nav-item" data-target="gilanpasa"><i class="fa-solid fa-mug-hot"></i> ගිලන්පස පූජා</a>
+                    <a href="#" class="nav-item" data-target="exams"><i class="fa-solid fa-graduation-cap"></i> වාර විභාග ලකුණු</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>කළමනාකරණය (Management)</h3>
+                    <a href="#" class="nav-item" data-target="leave-management"><i class="fa-solid fa-file-signature"></i> ගුරු නිවාඩු අංශය</a>
+                    <a href="#" class="nav-item" data-target="class-management"><i class="fa-solid fa-users-rectangle"></i> පන්ති කාමර</a>
+                    <a href="#" class="nav-item" data-target="committees"><i class="fa-solid fa-people-group"></i> කමිටු හා වගකීම්</a>
+                    <a href="#" class="nav-item" data-target="gallery"><i class="fa-solid fa-images"></i> ඡායාරූප ගැලරිය</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <button id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+                    <h1>සිරිධම්ම දහම් පාසල - පාලන පද්ධතිය</h1>
+                </div>
+                <div class="header-right">
+                    <span class="date-time" id="current-time"></span>
+                    <div class="user-profile">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <!-- HOME VIEW -->
+                <section id="home" class="view-section active">
+                    <div class="home-banner rounded-glass">
+                        <div class="banner-image">
+                            <img src="C:/Users/My Pc/.gemini/antigravity/brain/2cd1160f-5f5a-4dce-892c-d171a1fab4f6/school_photo_1773355015746.png" alt="School Banner" id="hero-image">
+                            <div class="banner-upload-overlay">
+                                <label for="banner-upload" class="upload-btn"><i class="fa-solid fa-camera"></i> Change Photo</label>
+                                <input type="file" id="banner-upload" accept="image/*" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="banner-content">
+                            <h2 class="editable" contenteditable="true" title="Click to edit Name">[දහම් පාසලේ නම]</h2>
+                            <p class="editable theme" contenteditable="true" title="Click to edit Theme" style="font-size:1.3rem;">"Rata deya surakina, Dahamata ledi, winayagaruka Purawesiyek hadamu"</p>
+                            <div class="contact-info mt-3">
+                                <i class="fa-solid fa-phone" style="color:var(--primary-color);"></i>
+                                <span class="editable" contenteditable="true" style="margin-left:8px;" title="Click to edit Contact">[දුරකථන අංකය]</span>
+                            </div>
+                            <button class="btn btn-primary mt-4" style="width:fit-content;" onclick="alert('තොරතුරු යාවත්කාලීන කරන ලදී (Updated!)')"><i class="fa-solid fa-save"></i> Save Details</button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-widgets">
+                        <div class="widget rounded-glass">
+                            <div class="widget-icon primary"><i class="fa-solid fa-users"></i></div>
+                            <div class="widget-info">
+                                <h3>Total Students</h3>
+                                <h2>[0]</h2>
+                            </div>
+                        </div>
+                        <div class="widget rounded-glass">
+                            <div class="widget-icon success"><i class="fa-solid fa-chalkboard-user"></i></div>
+                            <div class="widget-info">
+                                <h3>Total Teachers</h3>
+                                <h2>[0]</h2>
+                            </div>
+                        </div>
+                        <div class="widget rounded-glass">
+                            <div class="widget-icon warning"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="widget-info">
+                                <h3>Prefects</h3>
+                                <h2>[0]</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NOTICES SECTION -->
+                <section id="notices" class="view-section">
+                    <div class="section-header">
+                        <h2>නිවේදන පුවරුව (Notice Board)</h2>
+                        <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> නව නිවේදනයක්</button>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <div class="form-group row">
+                            <input type="text" placeholder="නිවේදනයේ මාතෘකාව..." class="form-control" style="flex:2;">
+                            <select class="form-control" style="flex:1;">
+                                <option>දෙමාපියන්ට (Parents)</option>
+                                <option>ගුරුවරුන්ට (Teachers)</option>
+                                <option>සිසුන්ට (Students)</option>
+                                <option>සියලුදෙනාටම (All)</option>
+                            </select>
+                            <button class="btn btn-success" onclick="sendNoticeWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Publish & Notify</button>
+                        </div>
+                        <p class="text-sm text-gray mt-2"><i class="fa-solid fa-info-circle"></i> නිවේදනය පලකළ වහාම අදාල පාර්ශව වෙත කෙටි පණිවිඩයක් හෝ WhatsApp පණිවිඩයක් යැවේ.</p>
+                        
+                        <div class="notice-list mt-4">
+                            <div class="notice-card">
+                                <h3 contenteditable="true">[නිවේදනයේ මාතෘකාව]</h3>
+                                <p contenteditable="true">[නිවේදනයේ විස්තරය]</p>
+                                <span class="badge badge-parents">Target: All</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- STUDENT ATTENDANCE SECTION -->
+                <section id="attendance-students" class="view-section">
+                    <div class="section-header">
+                        <h2>සිසු පැමිණීමේ ලේඛනය (Student Attendance)</h2>
+                        <div class="filters">
+                            <select class="form-control"><option>[පන්තිය තෝරන්න]</option></select>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>සිසුවාගේ අංකය</th>
+                                    <th>නම</th>
+                                    <th>පැමිණීම (Attendance)</th>
+                                    <th>ක්‍රියාමාර්ග (Action)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="form-control form-sm"></td>
+                                    <td>
+                                        <select class="form-control form-sm" style="width:100%;">
+                                            <option value="">[සිසුවා තෝරන්න...]</option>
+                                            <option value="S001">S001 - කසුන් පෙරේරා</option>
+                                            <option value="S002">S002 - අමාලි සිල්වා</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="checkbox" class="attendance-checkbox" style="width:25px;height:25px;"></td>
+                                    <td><button class="btn btn-warning btn-sm whatsapp-btn" onclick="sendAbsentWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Send Alert</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-sm text-gray mt-3"><i class="fa-solid fa-circle-exclamation"></i> පන්තියට නොපැමිණි බව සලකුණු කළ විටම, දෙමාපියන්ට ඒ බව දන්වා WhatsApp පණිවිඩයක් යැවීමට මෙම බොත්තම ක්‍රියාත්මක වේ. දින 5ක් නොපැමිණියහොත් ප්‍රධාන ආචාර්යවරයාටද දැනුම් දේ.</p>
+                    </div>
+                <!-- TEACHER ATTENDANCE SECTION -->
+                <section id="attendance-teachers" class="view-section">
+                    <div class="section-header">
+                        <h2>ගුරු පැමිණීමේ ලේඛනය (Teacher Attendance)</h2>
+                        <div class="filters">
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>දිනය</th>
+                                    <th>ගුරුවරයා (Teacher)</th>
+                                    <th>පැමිණීම (Attendance)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="form-control form-sm"></td>
+                                    <td>
+                                        <select class="form-control form-sm" style="width:100%;">
+                                            <option value="">[ගුරුවරයා තෝරන්න...]</option>
+                                            <option value="T001">T001 - මාලතී ද සිල්වා මිය</option>
+                                            <option value="T002">T002 - සුනිල් පෙරේරා මයා</option>
+                                            <option value="T003">T003 - අමරසේකර මයා</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="checkbox" class="attendance-checkbox" style="width:25px;height:25px;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- PREFECT ATTENDANCE SECTION -->
+                <section id="attendance-prefects" class="view-section">
+                    <div class="section-header">
+                        <h2>ශිෂ්‍ය නායක පැමිණීම (Prefect Attendance)</h2>
+                        <div class="filters">
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>දිනය</th>
+                                    <th>ශිෂ්‍ය නායකයා (Prefect)</th>
+                                    <th>පැමිණීම (Attendance)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="form-control form-sm"></td>
+                                    <td>
+                                        <select class="form-control form-sm" style="width:100%;">
+                                            <option value="">[ශිෂ්‍ය නායකයා තෝරන්න...]</option>
+                                            <option value="P001">P001 - කමිඳු මෙන්ඩිස් (ප්‍රධාන)</option>
+                                            <option value="P002">P002 - සචිනි නෙත්මිණි (උප)</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="checkbox" class="attendance-checkbox" style="width:25px;height:25px;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- EXAM MARKS SECTION -->
+                <section id="exams" class="view-section">
+                    <div class="section-header">
+                        <h2>වාර විභාග ලකුණු (Term Test Marks)</h2>
+                        <div class="filters">
+                            <select class="form-control"><option>2026</option></select>
+                            <select class="form-control"><option>1 වන වාරය</option><option>අවසන් වාරය</option></select>
+                        </div>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>නම</th>
+                                    <th>බුද්ධ ධර්මය</th>
+                                    <th>පාලි</th>
+                                    <th>අභිධර්මය</th>
+                                    <th>එකතුව</th>
+                                    <th>දෙමාපියන්ට යවන්න</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[සිසුවාගේ නම]</td>
+                                    <td>[0]</td>
+                                    <td>[0]</td>
+                                    <td>[0]</td>
+                                    <td>[0]</td>
+                                    <td><button class="btn btn-success btn-sm" onclick="sendExamMarksWhatsApp()"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- FLOWER OFFERING MARKS SECTION -->
+                <section id="flower-offerings" class="view-section">
+                    <div class="section-header">
+                        <h2>මල් පූජා ලකුණු (Flower Offering Marks)</h2>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <div class="alert alert-info">
+                            <i class="fa-solid fa-trophy"></i> වසර අවසානයේ වැඩිම ලකුණු ලාභියා: <strong>[නම] (ලකුණු [0]) - [පන්තිය]</strong>
+                        </div>
+                        <table class="data-table mt-3">
+                            <thead>
+                                <tr>
+                                    <th>දිනය</th>
+                                    <th>සිසුවාගේ නම</th>
+                                    <th>පන්තිය</th>
+                                    <th>ලැබූ ලකුණු</th>
+                                    <th>UPDATE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="form-control form-sm"></td>
+                                    <td>
+                                        <select class="form-control form-sm">
+                                            <option value="">[පන්තිය...]</option>
+                                            <option value="1">1 වසර</option>
+                                            <option value="2">2 වසර</option>
+                                            <option value="3">3 වසර</option>
+                                            <option value="4">4 වසර</option>
+                                            <option value="5">5 වසර</option>
+                                            <option value="6">6 වසර</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="form-control form-sm">
+                                            <option value="">[සිසුවා තෝරන්න...]</option>
+                                            <option value="S001">කසුන් පෙරේරා</option>
+                                            <option value="S002">අමාලි සිල්වා</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="number" placeholder="0" class="form-control form-sm text-center"></td>
+                                    <td><button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- GILANPASA SECTION -->
+                <section id="gilanpasa" class="view-section">
+                    <div class="section-header">
+                        <h2>පෝය දින ගිලන්පස පූජා (Poya Day Gilanpasa)</h2>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <h3>පන්ති මට්ටමින් සම්පිණ්ඩනය (Class-level Summary)</h3>
+                        <div class="dashboard-widgets mt-3">
+                            <div class="widget">
+                                <div class="widget-info w-100">
+                                    <h3 class="text-center">[පන්තිය]</h3>
+                                    <h2 class="text-center">[0] දෙනෙක්</h2>
+                                    <p class="text-center text-sm">ලබදුන් මුලු ලකුණු: [0]</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-header mt-4">
+                            <h3>නව වාර්තාවක් එක් කිරීම (Add Record)</h3>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>පෝය දිනය (Poya Day)</th>
+                                    <th>පන්තිය (Grade)</th>
+                                    <th>සිසුවා (Student)</th>
+                                    <th>ලකුණු (Marks)</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="date" class="form-control form-sm"></td>
+                                    <td>
+                                        <select class="form-control form-sm">
+                                            <option value="">[පන්තිය...]</option>
+                                            <option value="1">1 වසර</option>
+                                            <option value="2">2 වසර</option>
+                                            <option value="3">3 වසර</option>
+                                            <option value="4">4 වසර</option>
+                                            <option value="5">5 වසර</option>
+                                            <option value="6">6 වසර</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="form-control form-sm">
+                                            <option value="">[සිසුවා තෝරන්න...]</option>
+                                            <option value="S001">S001 - කසුන් පෙරේරා</option>
+                                            <option value="S002">S002 - අමාලි සිල්වා</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="number" placeholder="0" class="form-control form-sm text-center" style="width:80px;"></td>
+                                    <td><button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- LEAVE MANAGEMENT -->
+                <section id="leave-management" class="view-section">
+                    <div class="section-header">
+                        <h2>ගුරු නිවාඩු කළමනාකරණය (Leave Management)</h2>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <div class="alert alert-warning">
+                            <i class="fa-solid fa-triangle-exclamation"></i> <strong>අවධානයට:</strong> එක දිගට නිවාඩු 4ක් ලබාගත් ගුරුවරුන් පහත දැක්වේ.
+                        </div>
+                        <ul class="list-group mb-4">
+                            <li><i class="fa-solid fa-user-xmark text-danger mr-2"></i> [ගුරුවරයාගේ නම] ([දිනය] සිට [දිනය] දක්වා)</li>
+                        </ul>
+                        
+                        <h3>අනුමත කළ / නොකළ නිවාඩු</h3>
+                        <table class="data-table mt-2">
+                            <thead>
+                                <tr>
+                                    <th>ගුරුවරයා</th>
+                                    <th>දිනය</th>
+                                    <th>හේතුව</th>
+                                    <th>තත්වය</th>
+                                    <th>තීරණය</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[ගුරුවරයාගේ නම]</td>
+                                    <td>[YYYY-MM-DD]</td>
+                                    <td>[හේතුව]</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i> අනුමත කරන්න</button>
+                                        <button class="btn btn-danger btn-sm"><i class="fa-solid fa-xmark"></i> ප්‍රතික්ෂේප කරන්න</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- COMMITTEES -->
+                <section id="committees" class="view-section">
+                    <div class="section-header">
+                        <h2>කමිටු හා වගකීම් (Committees)</h2>
+                    </div>
+                    <div class="grid-2 mt-3">
+                        <div class="rounded-glass p-20">
+                            <h3><i class="fa-solid fa-sitemap primary"></i> පාසල් කළමනාකරණ කමිටුව</h3>
+                            <ul class="mt-2 responsibilities-list">
+                                <li><strong>උප ප්‍රධාන ආචාර්ය:</strong> උදෑසන මල්පූජාවේ කටයුතු සංවිධානය හා අධීක්ෂණය.</li>
+                                <li><strong>විනය භාර ආචාර්ය:</strong> සිසුන්ගේ පැමිණීම හා විනය පවත්වා ගැනීම.</li>
+                                <!-- More will be added by User later -->
+                            </ul>
+                        </div>
+                        <div class="rounded-glass p-20">
+                            <h3><i class="fa-solid fa-tent warning"></i> උත්සව, ක්‍රීඩා හා චාරිකා කමිටුව</h3>
+                            <ul class="mt-2 responsibilities-list">
+                                <li><strong>සභාපති:</strong> ක්‍රීඩා උත්සව කාලසටහන සැකසීම.</li>
+                                <li><strong>ලේකම්:</strong> වාර්ෂික වන්දනා චාරිකාව සංවිධානය කිරීම.</li>
+                                <!-- More will be added by User later -->
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                 <!-- GALLERY -->
+                 <section id="gallery" class="view-section">
+                    <div class="section-header">
+                        <h2>ඡායාරූප ගැලරිය (Gallery)</h2>
+                        <label for="gallery-upload" class="btn btn-primary" style="cursor: pointer;"><i class="fa-solid fa-upload"></i> නව ඡායාරූප එකතු කරන්න</label>
+                        <input type="file" id="gallery-upload" accept="image/*" multiple style="display: none;">
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <p class="text-sm text-gray mb-3">උත්සව අවස්ථාවල ලබාගත් පින්තූර මෙහි ගබඩා කළ හැක.</p>
+                        <div class="gallery-grid" id="gallery-container">
+                            <!-- User will upload images here to see them -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TEACHERS REGISTRY -->
+                <section id="registry-teachers" class="view-section">
+                    <div class="section-header">
+                        <h2>ගුරු නාමලේඛනය (Teachers Registry)</h2>
+                        <button class="btn btn-primary" onclick="addRow('teachers-tbody')"><i class="fa-solid fa-plus"></i> Add Teacher</button>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>අංකය / ID</th>
+                                    <th>නම (Name)</th>
+                                    <th>විෂය (Subject)</th>
+                                    <th>දුරකථනය (Phone)</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teachers-tbody">
+                                <tr>
+                                    <td contenteditable="true">T001</td>
+                                    <td contenteditable="true">[ගුරුවරයාගේ නම]</td>
+                                    <td contenteditable="true">බුද්ධ ධර්මය</td>
+                                    <td contenteditable="true">0711234567</td>
+                                    <td><button class="btn btn-danger btn-sm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-trash"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- STUDENTS REGISTRY -->
+                <section id="registry-students" class="view-section">
+                    <div class="section-header">
+                        <h2>සිසු නාමලේඛනය (Students Registry)</h2>
+                        <button class="btn btn-primary" onclick="addRow('students-tbody')"><i class="fa-solid fa-plus"></i> Add Student</button>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>අංකය / ID</th>
+                                    <th>නම (Name)</th>
+                                    <th>පන්තිය (Grade)</th>
+                                    <th>දෙමාපියන්ගේ නම</th>
+                                    <th>දුරකථනය (Phone)</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="students-tbody">
+                                <tr>
+                                    <td contenteditable="true">S001</td>
+                                    <td contenteditable="true">[සිසුවාගේ නම]</td>
+                                    <td contenteditable="true">6 වසර</td>
+                                    <td contenteditable="true">[දෙමාපියන්ගේ නම]</td>
+                                    <td contenteditable="true">0777654321</td>
+                                    <td><button class="btn btn-danger btn-sm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-trash"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- PREFECTS REGISTRY -->
+                <section id="registry-prefects" class="view-section">
+                    <div class="section-header">
+                        <h2>ශිෂ්‍ය නායක ලේඛනය (Prefects Registry)</h2>
+                        <button class="btn btn-primary" onclick="addRow('prefects-tbody')"><i class="fa-solid fa-plus"></i> Add Prefect</button>
+                    </div>
+                    <div class="rounded-glass p-20">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>අංකය / ID</th>
+                                    <th>නම (Name)</th>
+                                    <th>තනතුර (Position)</th>
+                                    <th>වගකීම (Responsibility)</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="prefects-tbody">
+                                <tr>
+                                    <td contenteditable="true">P001</td>
+                                    <td contenteditable="true">[ශිෂ්‍ය නායකයාගේ නම]</td>
+                                    <td contenteditable="true">ප්‍රධාන ශිෂ්‍ය නායක</td>
+                                    <td contenteditable="true">උදෑසන රැස්වීම</td>
+                                    <td><button class="btn btn-danger btn-sm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-trash"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- COMMON PLACEHOLDER FOR REGISTRIES -->
+                <section id="placeholder" class="view-section">
+                    <div class="section-header">
+                        <h2 id="placeholder-title">Section Name</h2>
+                    </div>
+                    <div class="rounded-glass p-20 text-center">
+                        <i class="fa-solid fa-file-lines" style="font-size:48px;color:var(--primary-color);margin-bottom:20px;"></i>
+                        <h3>මෙම අංශය සඳහා දත්ත ඇතුලත් කිරීමට හිඩසක් ඇත.</h3>
+                        <p class="text-gray mt-2">ඔබට මෙහි අවශ්‍ය තොරතුරු ඇතුලත් කළ හැක.</p>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Gallery image preview logic specifically for this page
+        document.getElementById('gallery-upload').addEventListener('change', function(e) {
+            const container = document.getElementById('gallery-container');
+            const files = e.target.files;
+            
+            for(let i=0; i<files.length; i++) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    const div = document.createElement('div');
+                    div.className = 'gallery-item';
+                    const img = document.createElement('img');
+                    img.src = evt.target.result;
+                    div.appendChild(img);
+                    container.appendChild(div);
+                }
+                reader.readAsDataURL(files[i]);
+            }
+        });
+    </script>
+</body>
+</html>
